@@ -6,7 +6,7 @@ COPY .env.example ./
 COPY package*.json ./
 
 RUN cat .env.example > .env
-RUN npm install -s
+RUN npm install
 
 COPY tsconfig.json .
 COPY src/ ./src
@@ -14,4 +14,3 @@ COPY src/ ./src
 EXPOSE 8080
 
 CMD ["npm", "start"]
-
